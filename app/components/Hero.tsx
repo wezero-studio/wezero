@@ -4,10 +4,10 @@ import { motion } from "framer-motion"
 import dynamic from "next/dynamic"
 
 // Dynamically import TextPressure with no SSR since it uses browser APIs
-const TextPressure = dynamic(() => import("../components/TextPressure").then((mod) => mod.default), { ssr: false })
-
+const TextPressure = dynamic(() => import("../../src/blocks/TextAnimations/TextPressure/TextPressure").then((mod) => mod.default), { ssr: false })
+//src/blocks/TextAnimations/TextPressure/TextPressure.tsx
 // Dynamically import MetaBalls with no SSR since it uses browser APIs
-const MetaBalls = dynamic(() => import("../components/MetaBalls").then((mod) => mod.default), { ssr: false })
+const MetaBalls = dynamic(() => import("../../src/blocks/Animations/MetaBalls/MetaBalls").then((mod) => mod.default), { ssr: false })
 
 export default function Hero() {
   return (
