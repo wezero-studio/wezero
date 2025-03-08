@@ -14,11 +14,11 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Solvo</span>
+            <span className="sr-only">Wezero</span>
             <img
               className="h-8 w-auto"
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/creative-SW6QDQbcVuwPgb6a2CYtYmRbsJa4k1.png"
-              alt="Solvo Logo"
+              src=""
+              alt="Wezero Logo"
             />
           </Link>
         </div>

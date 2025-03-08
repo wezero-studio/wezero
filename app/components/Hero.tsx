@@ -18,7 +18,7 @@ export default function Hero() {
           cursorBallColor="#ffffff"
           cursorBallSize={2}
           ballCount={15}
-          animationSize={30}
+          animationSize={10}
           enableMouseInteraction={true}
           enableTransparency={true}
           hoverSmoothness={0.05}
@@ -30,7 +30,7 @@ export default function Hero() {
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
           <div style={{ position: "relative", height: "300px" }} className="mb-8">
             <TextPressure
-              text="Solvo"
+              text="Wezero"
               flex={true}
               alpha={false}
               stroke={false}

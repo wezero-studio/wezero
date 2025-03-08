@@ -1,31 +1,21 @@
 import Hero from "./components/Hero"
-import WearYourStory from "./components/WearYourStory"
-import FeatureCarousel from "./components/FeatureCarousel"
-import PortfolioGrid from "./components/PortfolioGrid"
-import Timeline from "./components/Timeline"
-import Marquee from "./components/Marquee"
-import ContactForm from "./components/ContactForm"
-import NewsletterSubscribe from "./components/NewsletterSubscribe"
+import WhyChooseUsSection from "./components/WhyChooseUs"
+import WorkSection from "./components/OurWork"
+import EnhancedContactForm from "./components/EnhancedContactForm"
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <section id="about">
-        <WearYourStory />
-      </section>
       <section id="services">
-        <FeatureCarousel />
+        <WhyChooseUsSection />
       </section>
       <section id="work">
-        <PortfolioGrid />
+        <WorkSection />
       </section>
-      <Timeline />
-      <Marquee />
       <section id="contact">
-        <ContactForm />
+        <EnhancedContactForm />
       </section>
-      <NewsletterSubscribe />
     </>
   )
 }
