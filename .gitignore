@@ -25,3 +25,27 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# VSCode
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# Linux system files
+*~
+
+# Windows system files
+Thumbs.db
+Desktop.ini
+
+# Image/video cache
+*.log
+*.tmp
+.cache/
+
+# Local env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
