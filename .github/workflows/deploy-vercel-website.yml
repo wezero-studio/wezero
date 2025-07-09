@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: '23'
 
-      - name: Install yarn
-        run: npm install --global yarn@latest
+      #- name: Install yarn
+      #  run: npm install --global yarn@latest
 
       - name: Install Project Dependencies
-        run: yarn install
+        run: npm install --legacy-peer-deps
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
