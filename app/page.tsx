@@ -13,17 +13,37 @@ import SpotlightCard from "../src/Components/SpotlightCard/SpotlightCard"
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 
 export default function Home() {
-  // Card image paths
+  // Card image paths with URLs
   const cardImages = [
-    { src: "/images/maisongourmet.png", alt: "Maison Gourmet", title: "Maison Gourmet" },
-    { src: "/images/khg.png", alt: "Karachi Hazara Group", title: "Karachi Hazara Group" },
-    { src: "/images/bilingual.png", alt: "Billingual Stories", title: "Billingual Stories" },
+    { 
+      src: "/images/maisongourmet.png", 
+      alt: "Maison Gourmet", 
+      title: "Maison Gourmet",
+      url: "https://v0-mobile-restaurant-website-templa.vercel.app/"
+    },
+    { 
+      src: "/images/khg.png", 
+      alt: "Karachi Hazara Group", 
+      title: "Karachi Hazara Group",
+      url: "https://khg.com.pk/"
+    },
+    { 
+      src: "/images/bilingual.png", 
+      alt: "Billingual Stories", 
+      title: "Billingual Stories",
+      url: "https://v0-bilingual-children-s-story.vercel.app/"
+    },
   ];
 
   // BasicCard for mobile
-  function BasicCard({ src, alt, title }: { src: string; alt: string; title: string }) {
+  function BasicCard({ src, alt, title, url }: { src: string; alt: string; title: string; url: string }) {
     return (
-      <div className="bg-black rounded-xl border border-white/20 mb-6 overflow-hidden">
+      <a 
+        href={url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-black rounded-xl border border-white/20 mb-6 overflow-hidden transition-all duration-300 hover:border-cyan-400/50 hover:scale-[1.02] cursor-pointer"
+      >
         <div className="border-b border-white/20 bg-gradient-to-t from-[#271E37] to-[#060606]">
           <h3 className="text-lg font-semibold p-3 text-white">{title}</h3>
         </div>
@@ -34,7 +54,7 @@ export default function Home() {
             className="rounded-lg object-cover object-top w-full h-40 max-w-full"
           />
         </div>
-      </div>
+      </a>
     );
   }
 
@@ -332,17 +352,24 @@ export default function Home() {
                 >
                   {cardImages.map((img, idx) => (
                     <Card key={img.title} customClass={`card-${idx}`}>
-                      <div className="border-b border-white/20 bg-gradient-to-t from-[#271E37] to-[#060606] rounded-t-xl">
-                        <h3 className="text-lg font-semibold p-3 text-white">{img.title}</h3>
-                      </div>
-                      <div className="relative p-2 flex justify-center items-center bg-black rounded-b-xl">
-                        <img
-                          src={img.src}
-                          alt={img.alt}
-                          className="rounded-lg object-cover object-top w-full h-48 sm:h-56 md:h-64 max-w-full"
-                          style={{ objectFit: 'cover' }}
-                        />
-                      </div>
+                      <a 
+                        href={img.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+                      >
+                        <div className="border-b border-white/20 bg-gradient-to-t from-[#271E37] to-[#060606] rounded-t-xl">
+                          <h3 className="text-lg font-semibold p-3 text-white">{img.title}</h3>
+                        </div>
+                        <div className="relative p-2 flex justify-center items-center bg-black rounded-b-xl">
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            className="rounded-lg object-cover object-top w-full h-48 sm:h-56 md:h-64 max-w-full"
+                            style={{ objectFit: 'cover' }}
+                          />
+                        </div>
+                      </a>
                     </Card>
                   ))}
                 </CardSwap>
@@ -387,10 +414,15 @@ export default function Home() {
                 <span>Unlimited revisions until satisfied</span>
               </li>
             </ul>
-              <Button className="mt-8 bg-gradient-to-r from-cyan-400 to-violet-500 text-base sm:text-lg text-black hover:from-cyan-500 hover:to-violet-600">
-              Start Your Project
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="mt-8 bg-gradient-to-r from-cyan-400 to-violet-500 text-base sm:text-lg text-black hover:from-cyan-500 hover:to-violet-600">
+                  Start Your Project
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </DialogTrigger>
+              {socialsPopup}
+            </Dialog>
           </div>
         </div>
       </section>
