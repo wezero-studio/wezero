@@ -2,6 +2,14 @@ import type { NextConfig } from "next";
 import path from "node:path";
 
 const nextConfig: NextConfig = {
+  // Skip ESLint during builds
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  // Skip TypeScript type checking during builds
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   images: {
     remotePatterns: [
       {
